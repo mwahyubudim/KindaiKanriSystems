@@ -12,13 +12,21 @@ document.addEventListener("DOMContentLoaded", function () {
     function searchEmployees() {
         // Fetch and display employees based on search criteria
         const employeeId = document.getElementById("searchEmployeeId").value;
-        const department = document.getElementById("searchDepartment").value;
         const joiningDate = document.getElementById("searchJoiningDate").value;
+        const name = document.getElementById("searchName").value;
+        const gender = document.getElementById("searchGender").value;
+        const age = document.getElementById("searchAge").value;
+        const department = document.getElementById("searchDepartment").value;
+        const email = document.getElementById("searchEmail").value;
         
         let query = '/employees?';
         if (employeeId) query += `employeeId=${employeeId}&`;
+        if (joiningDate) query += `joiningDate=${joiningDate}&`;
+        if (name) query += `name=${name}&`;
+        if (gender) query += `gender=${gender}&`;
+        if (age) query += `age=${age}&`;
         if (department) query += `department=${department}&`;
-        if (joiningDate) query += `joiningDate=${joiningDate}`;
+        if (email) query += `email=${email}`;
 
         fetch(query)
             .then(response => response.json())
@@ -28,14 +36,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 data.forEach(employee => {
                     const tr = document.createElement("tr");
                     tr.innerHTML = `
-                        <td><input type="checkbox" class="select-employee" data-id="${employee.employeeId}"></td>
-                        <td>${employee.employeeId}</td>
-                        <td>${employee.joiningDate}</td>
-                        <td>${employee.name}</td>
-                        <td>${employee.gender}</td>
-                        <td>${employee.age}</td>
-                        <td>${employee.department}</td>
-                        <td>${employee.email}</td>
+                        <td><input type="checkbox" class="select-employee" data-id="${employee.社員ID}"></td>
+                        <td>${employee.社員ID}</td>
+                        <td>${employee.入社年月日}</td>
+                        <td>${employee.氏名}</td>
+                        <td>${employee.性別}</td>
+                        <td>${employee.年齢}</td>
+                        <td>${employee.所属}</td>
+                        <td>${employee.メールアドレス}</td>
                     `;
                     tbody.appendChild(tr);
                 });
@@ -51,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const selectedCheckboxes = document.querySelectorAll(".select-employee:checked");
         selectedCheckboxes.forEach(checkbox => {
             const employeeId = checkbox.dataset.id;
-            fetch(`/employees/${employeeId}`, { method: 'DELETE' })
+            fetch(`/java_kenshuu/kaishain/${employeeId}`, { method: 'DELETE' })
                 .then(response => {
                     if (response.ok) {
                         checkbox.closest("tr").remove();
