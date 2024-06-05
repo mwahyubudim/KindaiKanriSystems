@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="search-container">
+                <input type="text" id="searchEmployeeId" placeholder="社員ID">
+                <input type="text" id="searchDepartment" placeholder="所属">
+                <input type="date" id="searchJoiningDate">
+                <button id="searchButton">Search</button>
+            </div>
+            <div class="action-container">
+                <button id="addButton" class="action-button add">Add</button>
+                <button id="deleteButton" class="action-button delete">Delete</button>
+                <button id="closeButton" class="action-button close">Close</button>
+            </div>
+        </div>
+        <div class="employee-list">
+            <table id="employeeTable">
+                <thead>
+                    <tr>
+                        <th>Select</th>
+                        <th>社員ID</th>
+                        <th>入社年月日</th>
+                        <th>氏名</th>
+                        <th>性別</th>
+                        <th>年齢</th>
+                        <th>所属</th>
+                        <th>メールアドレス</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Employee rows will be added here dynamically -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
