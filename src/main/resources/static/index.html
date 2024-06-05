@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employee Management</title>
+    <title>勤怠管理システムDBZ</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,20 +12,20 @@
             <div class="search-container">
                 <input type="text" id="searchEmployeeId" placeholder="社員ID">
                 <input type="text" id="searchDepartment" placeholder="所属">
-                <input type="date" id="searchJoiningDate">
-                <button id="searchButton">Search</button>
+                <input type="date" id="searchJoiningDate" placeholder="年・月・日">
+                <button id="searchButton">検索</button>
             </div>
             <div class="action-container">
-                <button id="addButton" class="action-button add">Add</button>
-                <button id="deleteButton" class="action-button delete">Delete</button>
-                <button id="closeButton" class="action-button close">Close</button>
+                <button id="addButton" class="action-button add">追加</button>
+                <button id="deleteButton" class="action-button delete">削除</button>
+                <button id="closeButton" class="action-button close">閉じる</button>
             </div>
         </div>
         <div class="employee-list">
             <table id="employeeTable">
                 <thead>
                     <tr>
-                        <th>Select</th>
+                        <th>選択</th>
                         <th>社員ID</th>
                         <th>入社年月日</th>
                         <th>氏名</th>
