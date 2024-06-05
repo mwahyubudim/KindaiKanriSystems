@@ -72,7 +72,7 @@ th {
         align-items: flex-start;
     }
 
-    .search-container, .action-container {
+    .title-container, .search-container, .action-container, .close-container {
         flex-direction: column;
         width: 100%;
     }
