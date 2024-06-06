@@ -30,14 +30,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 data.forEach(employee => {
                     const tr = document.createElement("tr");
                     tr.innerHTML = `
-                        <td><input type="checkbox" class="select-employee" data-id="${employee.id}"></td>
-                        <td>${employee.id}</td>
-                        <td>${employee.joindate}</td>
-                        <td>${employee.name}</td>
-                        <td>${employee.sex}</td>
-                        <td>${employee.age}</td>
-                        <td>${employee.job}</td>
-                        <td>${employee.email}</td>
+                        <td><input type="checkbox" class="select-employee" data-id="${employee.社員ID}"></td>
+                        <td>${employee.社員ID}</td>
+                        <td>${employee.入社年月日}</td>
+                        <td>${employee.氏名}</td>
+                        <td>${employee.性別}</td>
+                        <td>${employee.年齢}</td>
+                        <td>${employee.所属}</td>
+                        <td>${employee.メールアドレス}</td>
                     `;
                     tbody.appendChild(tr);
                 });
